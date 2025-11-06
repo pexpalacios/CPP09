@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 16:18:32 by penpalac          #+#    #+#             */
-/*   Updated: 2025/11/05 18:31:43 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/11/06 16:59:20 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ float getValue(const std::string &line)
 	std::stringstream ssy(line.substr(pipe + 1));
 	float value;
 	ssy >> value;
+	if (value < 0 || value > 1000)
+		throw std::runtime_error("Error: bad input => " + line);
 	return (value);
 }
 
@@ -79,6 +81,10 @@ void BitcoinExchange::handleFile(std::ifstream &file)
 		{
 			if (line.empty() || line == "date | value")
 				continue;
+			
+			//check that date is maximun 10 chars and value INTMAX
+			if (line[10] != ' ')
+				throw (std::runtime_error("Date format must be: YYYY-MM-DD"));
 
 			std::string date = line.substr(0, 10);
 			std::stringstream ssy(line.substr(0, 4));
@@ -134,10 +140,9 @@ void BitcoinExchange::handleFile(std::ifstream &file)
 
 void BitcoinExchange::checkDate(size_t year, size_t month, size_t day) const
 {
-	// Check if date is valid
 	if (year < 2009 || month < 1 || month > 12 || day < 1 || day > 31)
 		throw (std::runtime_error("Error: Invalid date"));
-	else if (month == 2 && day > 29)
+	else if (month == 2 && day > 29) //añadir años bisiestos
 		throw (std::runtime_error("Error: Invalid date"));
 	else if ((month == 4 || month == 6 || month == 9 || month == 11) && day == 31)
 		throw (std::runtime_error("Error: Invalid date. Month doesn't have a 31st"));
