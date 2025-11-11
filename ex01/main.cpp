@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 15:48:09 by penpalac          #+#    #+#             */
-/*   Updated: 2025/11/06 16:48:03 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/11/11 16:26:46 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,27 @@
 
 int main(int ac, char **av)
 {
-	// check the numbers are single digit
-	// numbers can't be negative? nor decimal
-	// doesn't accept parentheses, only + - * /
 	if (ac < 2)
 		return (1);
 	try
 	{
 		newStack st;
+		int input, sign;
 		for (int i = 0; av[1][i]; i++)
 		{
-			// if number over 10 -> error
-			if (av[1][i] == ' ')
-				i++;
+			if (std::isspace(static_cast<unsigned char>(av[1][i])))
+                continue;
 			if (isdigit(av[1][i]) && isdigit(av[1][i + 1]))
 				throw(std::runtime_error("Numbers must be below 10"));
-			st.checkInput(av[1][i]);
+
+			if (isdigit(av[1][i]) && (av[1][i - 1] == '-'))
+				sign = -1;
+			else if (isdigit(av[1][i]) && av[1][i - 1] == '+'))
+				sign = 1;
+
+			st.checkInput(input * sign);
 		}
+		std::cout << st.top() << std::endl;
 	}
 	catch (const std::exception &e)
 	{

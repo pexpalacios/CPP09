@@ -6,26 +6,24 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 16:00:38 by penpalac          #+#    #+#             */
-/*   Updated: 2025/11/06 16:47:52 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/11/11 16:24:14 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 
-void newStack::checkInput(char input)
+void newStack::checkInput(char input, int sign)
 {
 	try
 	{
 		if (isdigit(input))
 		{
 			std::stack<int>::push(input - '0');
-			std::cout << "Added: " << std::stack<int>::top() << std::endl;
 		}
 		else if (input == '+' || input == '-' || input == '*' || input == '/')
 		{
-			std::cout << "Size: " << std::stack<int>::size() << std::endl;
-			if (std::stack<int>::size() < 1)
-				throw std::runtime_error("Not enough numbers in stack");
+			if (std::stack<int>::size() < 2)
+				return ;
 
 			int b = std::stack<int>::top();
 			std::stack<int>::pop();
@@ -38,7 +36,7 @@ void newStack::checkInput(char input)
 				std::stack<int>::push(a - b);
 			else if (input == '*')
 				std::stack<int>::push(a * b);
-			else if (input == '/')
+			else
 			{
 				if (b == 0)
 					throw std::runtime_error("Can't divide by zero");
@@ -52,5 +50,4 @@ void newStack::checkInput(char input)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << std::stack<int>::top() << std::endl;
 }

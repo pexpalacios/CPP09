@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 15:51:10 by penpalac          #+#    #+#             */
-/*   Updated: 2025/11/06 16:31:38 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/11/11 16:23:52 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class newStack : std::stack<int>
 {
 	public:
 		void checkInput(char input);
+		using std::stack<int>::top;
 };
 
 #endif
