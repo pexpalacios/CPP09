@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 15:51:10 by penpalac          #+#    #+#             */
-/*   Updated: 2025/11/11 16:23:52 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/11/12 15:37:20 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <sstream>
 #include <stack>
+#include <climits>
 
 
 class newStack : std::stack<int>
