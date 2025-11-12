@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 16:04:27 by penpalac          #+#    #+#             */
-/*   Updated: 2025/11/05 18:13:47 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/11/12 12:05:03 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int ac, char **av)
 {
 	if (ac != 2)
 	{
-		std::cerr << "Error: need a file" << std::endl;
+		std::cerr << "Error: a file is needed to run program" << std::endl;
 		return (1);
 	}
 

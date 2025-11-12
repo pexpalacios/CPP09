@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 16:04:51 by penpalac          #+#    #+#             */
-/*   Updated: 2025/11/05 18:32:08 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/11/12 12:33:45 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class BitcoinExchange
 
 	void handleFile(std::ifstream &file);
 	void checkDate(size_t year, size_t month, size_t day) const;
-	void checkValue(float value) const;
+	void checkFormat(const std::string line);
 };
 
 #endif

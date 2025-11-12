@@ -1,0 +1,12 @@
+date | value
+1990-01-01 | 1 //wrong year
+2013-30-02 | 1 //wrong month
+2013-01-42 | 1 //wrong day
+01-02-2013 | 1 //wrong format
+20000-2000 | 1 //wrong format
+2011-01-02 |   //no value
+2011-01-01 | -1 //negative value
+2011-01-01 |  1001 //high value
+2012-02-29 | 2 //leap year
+2013-02-29 | 2 //non-leap year
+2013-04-31 | 2 //31st
