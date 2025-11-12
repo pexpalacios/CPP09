@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:57:52 by penpalac          #+#    #+#             */
-/*   Updated: 2025/11/11 15:34:22 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/11/12 13:35:56 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void printContainer(const T &container)
 {
 	if (container.empty())
 	{
-		std::cout << "Conatiner is empty" << std::endl;
+		std::cout << "Container is empty" << std::endl;
 		return ;
 	}
 	typename T::const_iterator it;

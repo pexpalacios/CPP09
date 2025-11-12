@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 15:48:09 by penpalac          #+#    #+#             */
-/*   Updated: 2025/11/12 13:33:35 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/11/12 13:35:21 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main(int ac, char **av)
 		newStack st;
 		for (int i = 0; av[1][i]; i++)
 		{
-			if (std::isspace(static_cast<unsigned char>(av[1][i])))
+			if (std::isspace((av[1][i])))
 				continue;
 			st.checkInput(av[1][i]);
 		}
