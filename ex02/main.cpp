@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:51:22 by penpalac          #+#    #+#             */
-/*   Updated: 2025/11/11 15:40:50 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:24:12 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ int main(int ac, char **av)
 		fillVector(&vec, av);
 		printContainer(vec);
 		std::cout << "After [vector]: ";
-		end = clock();
 		sortVector(vec);
+		end = clock();
 		printContainer(vec);
 		vecTime = double(end - start) * 1000000 / CLOCKS_PER_SEC;
 	}
