@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 15:48:09 by penpalac          #+#    #+#             */
-/*   Updated: 2025/11/12 13:35:21 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:22:15 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int main(int ac, char **av)
 				continue;
 			st.checkInput(av[1][i]);
 		}
+		if (!st.size() != 1)
+			throw (std::runtime_error("Error: operation isn't possible"));
 		std::cout << st.top() << std::endl;
 	}
 	catch (const std::exception &e)
