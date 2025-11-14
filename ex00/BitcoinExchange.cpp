@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 16:18:32 by penpalac          #+#    #+#             */
-/*   Updated: 2025/11/12 12:55:16 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:23:37 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,15 @@ float getValue(const std::string &line)
 void BitcoinExchange::handleFile(std::ifstream &file)
 {
 	std::string line;
+	if (!std::getline(file, line) || line != "date | value")
+	{
+		std::cerr << "Error: input file must start with 'date | value'" << std::endl;
+		return;
+	}
 	while (std::getline(file, line))
 	{
 		try
 		{
-			if (line.empty() || line == "date | value")
-				continue;
-			
 			std::string date = line.substr(0, 10);
 			std::stringstream ssy(line.substr(0, 4));
 			size_t year;
