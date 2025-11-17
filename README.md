@@ -4,15 +4,15 @@
 This module doesn't have an specific theme, they are more complex exercises that use everything taught from cpp05 to cpp08. A different STL container is required for every exercise.
 
 ---
-- ex 00: Easy find
+- ex 00: Bitcoin Exchange
 ```
-	Use algorithms to create a function that finds an element within a container.
+	Getting and comparing information from a database with a Map container.
 ```
-- ex 01: Span
+- ex 01: Reverse Polish Notration
 ```
-	Recreate the container span (unavailable in c++98) as a simple class.
+	A calculator based off of reverse polish notation. Uses a stack.
 ```
-- ex 02: Mutated abomination
+- ex 02: PmergeMe
 ```
-	Create a MutantStack class that is just a stack with iterators.
+	Applying the Ford-Johnson algorithm in STL conatiners (list and vector).
 ```
